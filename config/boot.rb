@@ -10,7 +10,8 @@ module Psych
     alias_method :original_load_file, :load_file
     
     def load_file(filename, **kwargs)
-      original_load_file(filename, aliases: true, **kwargs)
+      kwargs[:aliases] = true unless kwargs.key?(:aliases)
+      original_load_file(filename, **kwargs)
     end
   end
 end
