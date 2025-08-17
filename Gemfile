@@ -31,8 +31,6 @@ gem 'net-smtp', require: false
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-# YAML parser with aliases support for Ruby 3.2
-gem 'psych', '~> 3.3.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -57,7 +55,12 @@ group :test do
 end
 
 group :production do
-  # Add production gem support
+  # YAML parser with aliases support for Ruby 3.2
+  gem 'psych', '~> 3.3.0'
+  # Matrix gem for Ruby 3.2 compatibility
+  gem 'matrix'
+  # Prime gem for Ruby 3.2 compatibility
+  gem 'prime'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
