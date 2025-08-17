@@ -1,3 +1,5 @@
+require "yaml"
+
 # Enable YAML aliases for Ruby 3.1 compatibility
 module Psych
   class << self
